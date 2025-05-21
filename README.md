@@ -1,16 +1,16 @@
 
 # Credit API
 
-This API is for a test in a job offer. 
+This API is part of a job application test. 
 
-It has two different usages in the same route(there is only one), returns the three best credit offers from institutions if you pass all params values (it will return less if there isn't any that match your search).
+It has two different uses on the same (and only) route. It returns the three best credit offers from institutions if all parameter values are provided — or fewer, if no full matches are found.
 
-CPFs avaible:
+CPFs available:
 * 111.111.111-11 
 * 123.123.123.12 
 * 222.222.222.22
 
-More about the routes and general information in: (will add url here if/when i deploy it online)
+More about the routes and general information in: (will add the url here if/when i deploy it online, you can use the local one instead)
 
 ## Environment Variables
 
