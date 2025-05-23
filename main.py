@@ -47,13 +47,27 @@ class Consulta(BaseModel):
                 "examples": {
                     "defaultResult": {
                         "value": {
-                            "instituicoes": [{"nome": "Banco do Brasil", "modalidades": [
-                                {"nome": "Crédito Consignado", "valorMin": 1000, "valorMax": 10000, "QntParcelaMin": 1, "QntParcelaMax": 12, "jurosMes": 0.01}]}]}
+                            "Banco do Brasil": {
+                                "Crédito Consignado": {
+                                    "valorMin": 1000,
+                                    "valorMax": 10000,
+                                    "QntParcelaMin": 1,
+                                    "QntParcelaMax": 12,
+                                    "jurosMes": 0.01
+                                }
+                            }
+                        }
                     },
                     "withAllParams": {
                         "value": {
-                            "bestOffers": [{"instituicaoFinanceira": "Banco do Brasil", "modalidadeCredito": "Crédito Consignado",
-                                            "valorAPagar": 1000, "valorSolicitado": 1000, "valorParcela": 100, "taxaJuros": 0.01, "qntParcelas": 12}]}
+                            "instituicaoFinanceira": "Banco do Brasil",
+                            "modalidadeCredito": "Crédito Consignado",
+                            "valorAPagar": 1000,
+                            "valorSolicitado": 1000,
+                            "valorParcela": 100,
+                            "taxaJuros": 0.01,
+                            "qntParcelas": 12
+                        }
                     }
                 }
             }
@@ -124,3 +138,29 @@ def consulta_cpf(consulta: Consulta):
             return resultsPerInstitution
     else:
         raise HTTPException(status_code=400, detail="Erro ao consultar CPF")
+
+
+@app.post("/mockup_data/")
+def mockup_data(consulta: Consulta):
+    if consulta.valorSolicitado == 0 or consulta.parcelas == 0:
+        return {
+            "Banco do Brasil": {
+                "Crédito Consignado": {
+                    "valorMin": 1000,
+                    "valorMax": 10000,
+                    "QntParcelaMin": 1,
+                    "QntParcelaMax": 12,
+                    "jurosMes": 0.01
+                }
+            }
+        }
+    else:
+        return {
+            "instituicaoFinanceira": "Banco do Brasil",
+            "modalidadeCredito": "Crédito Consignado",
+            "valorAPagar": 1000,
+            "valorSolicitado": 1000,
+            "valorParcela": 100,
+            "taxaJuros": 0.01,
+            "qntParcelas": 12
+        }
