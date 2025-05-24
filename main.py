@@ -142,7 +142,8 @@ def consulta_cpf(consulta: Consulta):
 
 @app.post("/mockup_data/")
 def mockup_data(consulta: Consulta):
-    if consulta.valorSolicitado == 0 or consulta.parcelas == 0:
+    valorSolicitado = decimal.Decimal(consulta.valorSolicitado)
+    if valorSolicitado == 0 or consulta.parcelas == 0:
         return {
             "Banco do Brasil": {
                 "Crédito Consignado": {
@@ -155,7 +156,7 @@ def mockup_data(consulta: Consulta):
             }
         }
     else:
-        return {
+        return [{
             "instituicaoFinanceira": "Banco do Brasil",
             "modalidadeCredito": "Crédito Consignado",
             "valorAPagar": 1000,
@@ -163,4 +164,13 @@ def mockup_data(consulta: Consulta):
             "valorParcela": 100,
             "taxaJuros": 0.01,
             "qntParcelas": 12
-        }
+        },
+            {
+            "instituicaoFinanceira": "Banco do BB",
+            "modalidadeCredito": "Crédito Consignado",
+            "valorAPagar": 1000,
+            "valorSolicitado": 1000,
+            "valorParcela": 100,
+            "taxaJuros": 0.01,
+            "qntParcelas": 12
+        }]
