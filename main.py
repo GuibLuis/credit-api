@@ -152,6 +152,22 @@ def mockup_data(consulta: Consulta):
                     "QntParcelaMin": 1,
                     "QntParcelaMax": 12,
                     "jurosMes": 0.01
+                },
+                "Crédito Pessoal": {
+                    "valorMin": 1000,
+                    "valorMax": 10000,
+                    "QntParcelaMin": 1,
+                    "QntParcelaMax": 12,
+                    "jurosMes": 0.01
+                }
+            },
+            "Banco do BB": {
+                "Crédito Consignado": {
+                    "valorMin": 1500,
+                    "valorMax": 15000,
+                    "QntParcelaMin": 5,
+                    "QntParcelaMax": 16,
+                    "jurosMes": 0.015
                 }
             }
         }
@@ -168,9 +184,9 @@ def mockup_data(consulta: Consulta):
             {
             "instituicaoFinanceira": "Banco do BB",
             "modalidadeCredito": "Crédito Consignado",
-            "valorAPagar": 1000,
-            "valorSolicitado": 1000,
-            "valorParcela": 100,
-            "taxaJuros": 0.01,
-            "qntParcelas": 12
+            "valorAPagar": 1500,
+            "valorSolicitado": 1500,
+            "valorParcela": 150,
+            "taxaJuros": 0.015,
+            "qntParcelas": 16
         }]
