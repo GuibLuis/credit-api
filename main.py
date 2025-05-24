@@ -12,7 +12,11 @@ API para consulta de ofertas de crédito de acordo com o cpf do cliente.
 tags_metadata = [
     {
         "name": "consulta",
-        "description": "Consulta de ofertas de crédito de acordo com o cpf do cliente"
+        "description": "Consulta de ofertas de crédito de acordo com o cpf do cliente, confira os exemplos de retorno"
+    },
+    {
+        "name": "mockup_data",
+        "description": "Retorna mockup de dados, pode enviar qualquer cpf, já se valor solicitado ou parcelas sejam 0 o retorno serão as ofertas, caso contrário serão as melhores ofertas"
     }
 ]
 
@@ -140,7 +144,7 @@ def consulta_cpf(consulta: Consulta):
         raise HTTPException(status_code=400, detail="Erro ao consultar CPF")
 
 
-@app.post("/mockup_data/")
+@app.post("/mockup_data/", tags=["mockup_data"])
 def mockup_data(consulta: Consulta):
     valorSolicitado = decimal.Decimal(consulta.valorSolicitado)
     if valorSolicitado == 0 or consulta.parcelas == 0:

@@ -5,13 +5,6 @@ This API is part of a job application test.
 
 It has two different uses on the same (and only) route. It returns the three best credit offers from institutions if all parameter values are provided — or fewer, if no full matches are found.
 
-CPFs available:
-* 111.111.111-11 
-* 123.123.123.12 
-* 222.222.222.22
-
-More about the routes and general information in: (will add the url here if/when i deploy it online, you can use the local one instead)
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -51,4 +44,15 @@ See the document about the API after the start
 
 ```bash
   http://127.0.0.1:9000/docs#/
+```
+
+CPFs available for testing:
+```bash
+111.111.111-11
+```
+```bash
+123.123.123.12 
+```
+```bash
+222.222.222.22
 ```
