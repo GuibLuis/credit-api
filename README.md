@@ -5,6 +5,10 @@ This API is part of a job application test.
 
 It has two different uses on the same (and only) route. It returns the three best credit offers from institutions if all parameter values are provided — or fewer, if no full matches are found.
 
+## Tech Stack
+
+FastAPI, Uvicorn, python-dotenv, Pydantic
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
