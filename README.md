@@ -41,14 +41,14 @@ Install dependencies
   pip install python-dotenv
 ```
 
-Start the API
+Start the API at port 9000 (port 8000 is been used by laravel)
 
 ```bash
-  uvicorn main:app
+  uvicorn main:app --port 9000
 ```
 
 See the document about the API after the start
 
 ```bash
-  http://127.0.0.1:8000/docs#/
+  http://127.0.0.1:9000/docs#/
 ```
